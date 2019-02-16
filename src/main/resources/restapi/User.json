@@ -1,0 +1,38 @@
+{
+  "$id": "https://example.com/restapi/User.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "User",
+  "description": "A simple user type to uniquely identify a secure account",
+  "type": "object",
+  "definitions": {
+    "Gender": {"enum": ["male", "female"]}
+  },
+  "properties": {
+    "id": {
+      "description": "Uniquely identifies a user",
+      "type": "string",
+      "format": "email",
+      "readOnly": true
+    },
+    "password": {
+      "description": "The user's password",
+      "type": "string",
+      "format": "password",
+      "writeOnly": true
+    },
+    "name": {
+      "type": "string",
+      "description": "A public name for the user",
+      "maxLength": 128
+    },
+    "dob": {
+      "type": "string",
+      "description": "The user's date of birth",
+      "format": "date"
+    },
+    "gender": {
+      "$ref": "#/definitions/Gender"
+    }
+  },
+  "required": ["id", "password", "name"]
+}
