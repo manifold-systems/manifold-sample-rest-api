@@ -18,10 +18,14 @@ API files *are* your API!
 Manifold is best experienced in [IntelliJ IDEA](https://www.jetbrains.com/idea/download/).
 * Install the Manifold IntelliJ plugin directly from IntelliJ IDEA:
 
-<kbd>Settings</kbd> ➜ <kbd>Plugins</kbd> ➜ <kbd>Browse repositories</kbd> ➜ search: <kbd>Manifold</kbd>
+   <kbd>Settings</kbd> ➜ <kbd>Plugins</kbd> ➜ <kbd>Browse repositories</kbd> ➜ search: `Manifold`
 
 * Close and relaunch IDEA
-* Open this project
+* Open this project: `manifold-sample-rest-api`
+* Be sure to setup an SDK for <b>Java 11</b>:
+
+  <kbd>Project Structure</kbd> ➜ <kbd>SDKs</kbd> ➜ <kbd>+</kbd> ➜ <kbd>JDK</kbd>
+* Or change the `pom.xml` file to use a JDK of your choosing, Manifold fully supports Java 8 - 11
 
 ### Running the `UserServer`
 * Run the `restapi.UserServer` class directly with Java
