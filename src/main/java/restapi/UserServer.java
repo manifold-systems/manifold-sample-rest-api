@@ -25,7 +25,7 @@ public class UserServer {
     // GET User by Id
     get("/users/:id", (req, res) -> {
       String id = req.params(":id");
-      User user = UserDao.findUser(id); // <~~~ The User.json file **is** the User type!
+      User user = UserDao.findUser(id); // <~~~ The User.json file **is** the User type! No code gen, no POJOs.
       if (user != null) {
         return user.write().toJson(); // <~~~ Manifold JSON Schema types provide a powerful fluent API!
       }
