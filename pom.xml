@@ -14,7 +14,7 @@
         <dependency>
             <groupId>systems.manifold</groupId>
             <artifactId>manifold-all</artifactId>
-            <version>0.55-alpha</version>
+            <version>0.56-alpha</version>
         </dependency>
 
         <!--SparkJava -->
@@ -72,13 +72,14 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.6.1</version>
+                <version>3.8.0</version>
                 <configuration>
                     <source>11</source>
                     <target>11</target>
                     <encoding>UTF-8</encoding>
                     <compilerArgs>
-                        <arg>-Xplugin:Manifold strings</arg>
+                        <!-- Configure manifold plugin, enable string interpolation and checked exception suppression-->
+                        <arg>-Xplugin:Manifold strings exceptions</arg>
                     </compilerArgs>
                 </configuration>
             </plugin>
