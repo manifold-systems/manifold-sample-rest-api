@@ -1,7 +1,6 @@
 package restapi;
 
-import restapi.User;
-
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -14,7 +13,7 @@ public class UserDao {
   public static final String SUPER = "super";
 
   public static List<User> getAll() {
-    return USERS.values().toList();
+    return new ArrayList<>(USERS.values());
   }
 
   public static User findUser(String id) {

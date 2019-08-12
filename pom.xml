@@ -2,19 +2,23 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>manifold</groupId>
+    <groupId>systems.manifold</groupId>
     <artifactId>manifold-sample-rest-api</artifactId>
     <version>0.1-SNAPSHOT</version>
 
     <name>Manifold :: Sample REST API</name>
 
+    <properties>
+        <manifold.version>2019.1.11</manifold.version>
+    </properties>
+    
     <dependencies>
 
         <!-- Manifold -->
         <dependency>
             <groupId>systems.manifold</groupId>
-            <artifactId>manifold-all</artifactId>
-            <version>2019.1.8</version>
+            <artifactId>manifold-json</artifactId>
+            <version>${manifold.version}</version>
         </dependency>
 
         <!--SparkJava -->
@@ -34,12 +38,6 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.despegar</groupId>
-            <artifactId>spark-test</artifactId>
-            <version>1.1.8</version>
             <scope>test</scope>
         </dependency>
 
@@ -78,10 +76,31 @@
                     <target>11</target>
                     <encoding>UTF-8</encoding>
                     <compilerArgs>
-                        <!-- Configure manifold plugin, enable string interpolation and checked exception suppression-->
-                        <arg>-Xplugin:Manifold strings exceptions</arg>
+                        <!-- Configure manifold plugin -->
+                        <arg>-Xplugin:Manifold</arg>
                     </compilerArgs>
+                    <!-- Add the processor path for the plugin (required for Java 9+ -->
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>systems.manifold</groupId>
+                            <artifactId>manifold-json</artifactId>
+                            <version>${manifold.version}</version>
+                        </path>
+                    </annotationProcessorPaths>
                 </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.2</version>
+
+<!--                <configuration>-->
+<!--                    &lt;!&ndash; Java 8 only &ndash;&gt;-->
+<!--                    <additionalClasspathElements>-->
+<!--                        <additionalClasspathElement>${java.home}/../lib/tools.jar</additionalClasspathElement>-->
+<!--                    </additionalClasspathElements>-->
+<!--                </configuration>-->
             </plugin>
         </plugins>
     </build>

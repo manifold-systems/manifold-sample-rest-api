@@ -1,6 +1,6 @@
 package restapi;
 
-import manifold.util.JsonUtil;
+import manifold.api.util.JsonUtil;
 import spark.Spark;
 
 import static spark.Spark.*;
@@ -62,7 +62,7 @@ public class UserServer {
     after((req, res) -> res.type("application/json"));
   }
 
-  static void stop() {
+  public static void stop() {
     Spark.stop();
   }
 }
