@@ -1,6 +1,6 @@
 package restapi;
 
-import manifold.api.util.JsonUtil;
+import manifold.api.json.Json;
 import spark.Spark;
 
 import static spark.Spark.*;
@@ -20,7 +20,7 @@ public class UserServer {
     UserDao.init();
 
     // GET all Users
-    get("/users", (req, res) -> UserDao.getAll(), JsonUtil::toJson);
+    get("/users", (req, res) -> UserDao.getAll(), Json::toJson);
 
     // GET User by Id
     get("/users/:id", (req, res) -> {
