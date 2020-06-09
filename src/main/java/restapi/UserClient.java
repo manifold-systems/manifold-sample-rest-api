@@ -1,7 +1,7 @@
 package restapi;
 
-import manifold.api.json.IJsonList;
-import manifold.api.json.Requester;
+import manifold.json.rt.api.IJsonList;
+import manifold.json.rt.api.Requester;
 import java.time.LocalDate;
 
 import static restapi.User.Gender.male;

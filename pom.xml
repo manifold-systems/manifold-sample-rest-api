@@ -9,7 +9,7 @@
     <name>Manifold :: Sample REST API</name>
 
     <properties>
-        <manifold.version>2020.1.12</manifold.version>
+        <manifold.version>2020.1.13</manifold.version>
     </properties>
     
     <dependencies>
@@ -19,15 +19,22 @@
             <groupId>systems.manifold</groupId>
             <artifactId>manifold-json</artifactId>
             <version>${manifold.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>systems.manifold</groupId>
+            <artifactId>manifold-json-rt</artifactId>
+            <version>${manifold.version}</version>
         </dependency>
         <!-- Manifold String Templates (string interpolation) -->
         <dependency>
             <groupId>systems.manifold</groupId>
             <artifactId>manifold-strings</artifactId>
             <version>${manifold.version}</version>
+            <scope>provided</scope>
         </dependency>
 
-        <!--SparkJava -->
+        <!--SparkJava for the server -->
         <dependency>
             <groupId>com.sparkjava</groupId>
             <artifactId>spark-core</artifactId>

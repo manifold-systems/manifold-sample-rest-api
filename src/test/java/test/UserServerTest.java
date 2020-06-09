@@ -1,7 +1,7 @@
 package test;
 
-import manifold.api.json.IJsonList;
-import manifold.api.json.Requester;
+import manifold.json.rt.api.IJsonList;
+import manifold.json.rt.api.Requester;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
