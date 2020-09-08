@@ -9,7 +9,7 @@
     <name>Manifold :: Sample REST API</name>
 
     <properties>
-        <manifold.version>2020.1.26</manifold.version>
+        <manifold.version>2020.1.27</manifold.version>
     </properties>
     
     <dependencies>
@@ -17,23 +17,9 @@
         <!-- Manifold JSON -->
         <dependency>
             <groupId>systems.manifold</groupId>
-            <artifactId>manifold-json</artifactId>
-            <version>${manifold.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>systems.manifold</groupId>
             <artifactId>manifold-json-rt</artifactId>
             <version>${manifold.version}</version>
         </dependency>
-        <!-- Manifold String Templates (string interpolation) -->
-        <dependency>
-            <groupId>systems.manifold</groupId>
-            <artifactId>manifold-strings</artifactId>
-            <version>${manifold.version}</version>
-            <scope>provided</scope>
-        </dependency>
-
         <!--SparkJava for the server -->
         <dependency>
             <groupId>com.sparkjava</groupId>
@@ -56,27 +42,6 @@
 
     </dependencies>
 
-    <!--Java 8: Add tools.jar from the jdk-->
-    <!--<profiles>-->
-        <!--<profile>-->
-            <!--<id>internal.tools-jar</id>-->
-            <!--<activation>-->
-                <!--<file>-->
-                    <!--<exists>${java.home}/../lib/tools.jar</exists>-->
-                <!--</file>-->
-            <!--</activation>-->
-            <!--<dependencies>-->
-                <!--<dependency>-->
-                    <!--<groupId>com.sun</groupId>-->
-                    <!--<artifactId>tools</artifactId>-->
-                    <!--<version>1.8.0</version>-->
-                    <!--<scope>system</scope>-->
-                    <!--<systemPath>${java.home}/../lib/tools.jar</systemPath>-->
-                <!--</dependency>-->
-            <!--</dependencies>-->
-        <!--</profile>-->
-    <!--</profiles>-->
-
     <!--Add the -Xplugin:Manifold argument for the javac compiler-->
     <build>
         <plugins>
@@ -92,7 +57,7 @@
                         <!-- Configure manifold plugin -->
                         <arg>-Xplugin:Manifold</arg>
                     </compilerArgs>
-                    <!-- Add the processor path for the plugin (required for Java 9+ -->
+                    <!-- Add the processor path for the plugin -->
                     <annotationProcessorPaths>
                         <path>
                             <groupId>systems.manifold</groupId>
@@ -112,13 +77,6 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.22.2</version>
-
-<!--                <configuration>-->
-<!--                    &lt;!&ndash; Java 8 only &ndash;&gt;-->
-<!--                    <additionalClasspathElements>-->
-<!--                        <additionalClasspathElement>${java.home}/../lib/tools.jar</additionalClasspathElement>-->
-<!--                    </additionalClasspathElements>-->
-<!--                </configuration>-->
             </plugin>
         </plugins>
     </build>
