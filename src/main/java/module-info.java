@@ -1,3 +1,7 @@
+/**
+ * Note, this module-info.java file is not necessary; it is only here to demonstrate setting one up.
+ * Feel free to delete it if you are not interested in named modules.
+ */
 module manifold.sample.rest.api {
     // Use the JSON manifold for type-safe access to JSON schema and REST API
     requires manifold.json.rt;
