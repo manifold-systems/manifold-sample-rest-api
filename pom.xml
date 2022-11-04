@@ -9,7 +9,7 @@
     <name>Manifold :: Sample REST API</name>
 
     <properties>
-        <manifold.version>2022.1.18</manifold.version>
+        <manifold.version>2022.1.23</manifold.version>
     </properties>
     
     <dependencies>
